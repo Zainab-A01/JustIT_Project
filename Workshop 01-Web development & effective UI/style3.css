@@ -1,0 +1,59 @@
+<style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    header {
+      background-color: orange;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 1rem;
+    }
+    .filters input,
+    .filters select,
+    .filters button {
+      margin: 0.5rem;
+      padding: 0.4rem;
+    }
+    .product-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .product-table th,
+    .product-table td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    .product-table img {
+      width: 60px;
+    }
+    .panel {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+    }
+    .kafka-panel {
+      background-color: #f8f8f8;
+    }
+    .health-panel span {
+      margin-right: 1.5rem;
+      font-weight: bold;
+    }
+    .green { color: green; }
+    .red { color: red; }
+  </style>

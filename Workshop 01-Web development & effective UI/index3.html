@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internal Product Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    header {
+      background-color: orange;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 1rem;
+    }
+    .filters input,
+    .filters select,
+    .filters button {
+      margin: 0.5rem;
+      padding: 0.4rem;
+    }
+    .product-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .product-table th,
+    .product-table td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    .product-table img {
+      width: 60px;
+    }
+    .panel {
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+    }
+    .kafka-panel {
+      background-color: #f8f8f8;
+    }
+    .health-panel span {
+      margin-right: 1.5rem;
+      font-weight: bold;
+    }
+    .green { color: green; }
+    .red { color: red; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Internal Product Dashboard</strong></div>
+    <nav aria-label="Main Navigation">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Kafka Monitor</a>
+      <a href="#">System Health</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Product Data Viewer</h2>
+    
+    <section class="filters" aria-label="Product Filters">
+      <label for="category">Category:</label>
+      <select id="category" aria-label="Category Filter">
+        <option>All</option>
+        <option>vegetables</option>
+        <option>drinks</option>
+        <option>bakery</option>
+      </select>
+
+      <label for="availability">Availability:</label>
+      <select id="availability" aria-label="Availability Filter">
+        <option>All</option>
+        <option>in stock</option>
+        <option>out of stock</option>
+      </select>
+
+      <label for="sku">SKU:</label>
+      <input type="text" id="sku" placeholder="Enter SKU" aria-label="SKU Search"/>
+      <button aria-label="Search Button">Search</button>
+    </section>
+
+    <section>
+      <table class="product-table" aria-label="Product Table">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Availability</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12345</td>
+            <td><img src="https://www.sainsburys.co.uk/wcsstore7.11.1/Sainsburys/images/catalogue/240/Organic-Carrots-700g.jpg" alt="Organic Carrots 700g"/></td>
+            <td>Organic Carrots 700g</td>
+            <td>vegetables</td>
+            <td>✔ In Stock</td>
+            <td>£1.25</td>
+          </tr>
+          <tr>
+            <td>54321</td>
+            <td><img src="https://www.sainsburys.co.uk/wcsstore7.11.1/Sainsburys/images/catalogue/240/Pure-Apple-Juice-1L.jpg" alt="Pure Apple Juice 1L"/></td>
+            <td>Pure Apple Juice 1L</td>
+            <td>drinks</td>
+            <td>❌ Out of Stock</td>
+            <td>£1.50</td>
+          </tr>
+          <tr>
+            <td>51432</td>
+            <td><img src="https://www.sainsburys.co.uk/wcsstore7.11.1/Sainsburys/images/catalogue/240/Hovis-Wholemeal-Bread-800g.jpg" alt="Hovis Bread 800g"/></td>
+            <td>Hovis Medium Sliced Wholemeal Bread 800g</td>
+            <td>bakery</td>
+            <td>✔ In Stock</td>
+            <td>£1.39</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel kafka-panel" aria-label="Kafka Status Panel">
+      <h3>Kafka Monitor Panel</h3>
+      <p><strong>Topic:</strong> Product Updates</p>
+      <p><strong>Last Message Received:</strong> 04-08-2025 14:32:55</p>
+    </section>
+
+    <section class="panel health-panel" aria-label="Microservices Health Panel">
+      <h3>Microservices Health Panel</h3>
+      <p>
+        <span>Product Service: <span class="green">🟢</span></span>
+        <span>Kafka Consumer: <span class="green">🟢</span></span>
+        <span>MongoDB Service: <span class="red">🔴</span></span>
+      </p>
+    </section>
+  </main>
+
+</body>
+</html>
